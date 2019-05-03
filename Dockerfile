@@ -28,7 +28,7 @@ RUN apt-get update && apt-get install -y \
 	vim \
 	curl \
 	wget \
-	node \
+	nodejs \
 	npm
 
 RUN locale-gen en_US.UTF-8
