@@ -27,9 +27,13 @@ RUN apt-get update && apt-get install -y \
 	dumb-init \
 	vim \
 	curl \
-	wget \
-	nodejs \
-	npm
+	wget 
+
+RUN apt-get update
+RUN apt-get -y install curl gnupg
+RUN curl -sL https://deb.nodesource.com/setup_10.x  | bash -
+RUN apt-get -y install nodejs
+RUN npm install
 
 RUN locale-gen en_US.UTF-8
 # We unfortunately cannot use update-locale because docker will not use the env variables
